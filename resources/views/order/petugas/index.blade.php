@@ -49,16 +49,16 @@
                                 d="m1 9 4-4-4-4" />
                         </svg>
                         <a href="#"
-                            class="ms-1 text-sm font-medium text-gray-700  md:ms-2 dark:text-gray-400 dark:hover:text-white">Pembelian</a>
+                            class="ms-1 text-sm font-medium text-gray-700  md:ms-2 dark:text-gray-400 dark:hover:text-white">Penjualan</a>
                     </div>
                 </li>
             </ol>
         </nav>
-        <div class="text-3xl font-medium my-4">Pembelian</div>
+        <div class="text-3xl font-medium my-4">Penjualan</div>
 
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-12 bg-white p-4">
             <div class="mb-4 flex justify-between">
-                {{-- <form action="{{ route('petugas.order.export') }}" method="get" target="_blank">
+                <form action="{{ route('petugas.order.export') }}" method="get">
                     <input type="hidden" name="yearFilter" value="{{ request('yearFilter') }}">
                     <input type="hidden" name="monthFilter" value="{{ request('monthFilter') }}">
                     <input type="hidden" name="dayFilter" value="{{ request('dayFilter') }}">
@@ -99,14 +99,7 @@
                             </option>
                         @endfor
                     </select>
-                </form> --}}
-
-                <a href="{{ route('petugas.order.export') }}"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
-                    font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700
-                    focus:outline-none dark:focus:ring-blue-800">
-                    Export Penjualan (.xlsx)
-                </a>
+                </form>
 
                 <a href="{{ route('petugas.order.create') }}"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300

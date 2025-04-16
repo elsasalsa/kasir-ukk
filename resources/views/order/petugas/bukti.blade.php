@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-    <h2>Indo April</h2>
+    <h2>Vlexy Lite</h2>
     <div class="section">
         <strong>{{ $order->member->name ?? 'Non Member' }}</strong><br>
         Member Status: {{ $order->member ? 'Member' : 'Non Member' }}<br>

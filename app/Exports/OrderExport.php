@@ -12,11 +12,19 @@ class OrderExport implements FromCollection, WithHeadings
     public function __construct($request) {
         $this->request = $request;
     }
-
     public function collection()
     {
-        // Mengambil data tanpa filter berdasarkan tahun, bulan, atau hari
-        $query = Order::with(['user', 'member']);
+        $query = Order::with(['user', 'member'])
+        ->when($this->request->filled('yearFilter'), function ($q) {
+            $q->whereYear('created_at', $this->request->yearFilter);
+        })
+        ->when($this->request->filled('monthFilter'), function ($q) {
+            $q->whereMonth('created_at', $this->request->monthFilter);
+        })
+        ->when($this->request->filled('dayFilter'), function ($q) {
+            $q->whereDay('created_at', $this->request->dayFilter);
+        });
+
 
         return $query->get()->map(function ($order) {
             return [
@@ -38,6 +46,6 @@ class OrderExport implements FromCollection, WithHeadings
 
     public function headings(): array
     {
-        return ['Nama Pelanggan', 'No HP Pelanggan', 'Poin Pelanggan', 'Produk', 'Total Harga', 'Total Bayar', 'Total Diskon Poin', 'Total Kembalian', 'Tanggal Pembelian'];
+        return ['Nama Pelanggan', 'No HP Pelanggan', 'Poin Pelanggan',	'Produk', 'Total Harga', 'Total Bayar',	'Total Diskon Poin', 'Total Kembalian', 'Tanggal Pembelian'];
     }
 }

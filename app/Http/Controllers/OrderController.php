@@ -84,7 +84,7 @@ class OrderController extends Controller
                 ->when($request->dayFilter, function ($query) use ($request) {
                     $query->whereDay('created_at', $request->dayFilter);
                 })
-                ->paginate(10);
+                ->paginate(5);
 
         return view('order.petugas.index', compact('orders', 'user'));
     }

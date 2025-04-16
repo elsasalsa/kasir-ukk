@@ -27,7 +27,7 @@ class ProductController extends Controller
             });
         }
 
-        $products = $query->paginate(10)->withQueryString();
+        $products = $query->paginate(5)->withQueryString();
 
         return view('product.admin.index', compact('products'));
     }

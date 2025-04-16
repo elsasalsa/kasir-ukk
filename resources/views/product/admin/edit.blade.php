@@ -132,12 +132,12 @@
                     </div>
 
                     <!-- Stock -->
-                    <div>
+                    {{-- <div>
                         <label for="price" class="block text-sm font-medium text-gray-700">Stok <span
                                 class="text-red-500">*</span></label>
                         <input type="number" id="stock" name="stock" value="{{ $product['stock'] }}"
                             class="mt-1 p-2 w-full border rounded-lg focus:ring-blue-500 focus:border-blue-500">
-                    </div>
+                    </div> --}}
                 </div>
 
                 <!-- Tombol Simpan -->
