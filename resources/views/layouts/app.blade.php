@@ -28,7 +28,7 @@
                                 </path>
                             </svg>
                         </button>
-                        <a href="" class="flex ms-2 ml-8 md:me-24">
+                        <a href="" class="flex ms-2 ml-11 md:me-24">
                             <img src="/img/logo.jpg" class="h-8 me-3" alt="FlowBite Logo" />
                             <span
                                 class="self-center text-lg font-semibold whitespace-nowrap dark:text-white">Vlexy Lite</span>

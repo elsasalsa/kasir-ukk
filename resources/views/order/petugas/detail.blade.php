@@ -99,9 +99,11 @@
 
         <div class="bg-white p-8 rounded-lg shadow-md grid grid-cols-1 gap-6">
             <div class="mb-5">
-                <a href=""
-                    class="w-28 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                    Unduh
+                <a href="{{ route('petugas.order.bukti', $order->id) }}">
+                    <button type="button"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5">
+                        Unduh
+                    </button>
                 </a>
                 <a href="{{ route('petugas.order.index') }}"
                     class="w-28 text-white bg-gray-500 hover:bg-gray-600 focus:ring-2 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
@@ -113,7 +115,7 @@
                 <div class="font-normal text-sm uppercase">
                     <p class="font-bold">{{ $member->no_telp }}</p>
                     <p>Member sejak : {{ $member->created_at->format('d M Y') }}</p>
-                    <p>Member poin : {{ $member->point }}</p>
+                    <p>Member poin : {{ $member->point ?? '0'}}</p>
                 </div>
                 <div class="font-normal text-sm text-right">
                     <p>Invoice - #{{ $order->id }}</p>

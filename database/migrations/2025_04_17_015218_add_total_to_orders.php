@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->unsignedBigInteger('total_price')->change();
-            $table->unsignedBigInteger('total_payment')->change();
-            $table->unsignedBigInteger('total_return')->change();
+            $table->unsignedBigInteger('total_price')->after('member_id');
+            $table->unsignedBigInteger('total_payment')->after('total_price');
+            $table->unsignedBigInteger('total_return')->after('total_payment');
         });
     }
 

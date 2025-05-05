@@ -102,6 +102,7 @@
                                 {{ $item['role'] == 'employee' ? 'petugas' : $item['role'] }}
                             </td>
                             <td class="px-6 py-4">
+                                @if ($item['role'] !== 'admin')
                                 <button type="button"
                                         onclick="window.location.href='{{ route('admin.user.edit', $item->id) }}'"
                                         class="inline-flex items-center justify-center focus:outline-none text-white bg-yellow-400
@@ -109,6 +110,12 @@
                                         me-1 mb-1 dark:focus:ring-yellow-900">
                                     Edit
                                 </button>
+                                @else
+                                    <button type="button" class="inline-flex items-center justify-center focus:outline-none text-gray-500 bg-gray-300
+                                    cursor-not-allowed text-sm px-5 py-2.5 me-1 mb-1 rounded-lg">
+                                        Edit
+                                    </button>
+                                @endif
 
                                 {{-- Show the delete button only if the role is not admin --}}
                                 @if ($item['role'] !== 'admin')

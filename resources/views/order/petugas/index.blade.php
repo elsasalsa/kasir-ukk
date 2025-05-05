@@ -62,19 +62,23 @@
                     <input type="hidden" name="yearFilter" value="{{ request('yearFilter') }}">
                     <input type="hidden" name="monthFilter" value="{{ request('monthFilter') }}">
                     <input type="hidden" name="dayFilter" value="{{ request('dayFilter') }}">
-                    <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
+                    <button
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
                     font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700
                     focus:outline-none dark:focus:ring-blue-800">
-                    Export Penjualan (.xlsx)</button>
+                        Export Penjualan (.xlsx)</button>
                 </form>
                 <form action="{{ route('petugas.order.index') }}" method="GET" class="flex items-center gap-4">
-                    <select name="yearFilter" onchange="this.form.submit()" class="p-2 border rounded">
+
+                    <select name="yearFilter" onchange="this.form.submit()"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                         <option value="">Pilih Tahun</option>
                         <option value="2025" {{ request('yearFilter') == '2025' ? 'selected' : '' }}>2025</option>
                         <option value="2024" {{ request('yearFilter') == '2024' ? 'selected' : '' }}>2024</option>
                     </select>
 
-                    <select name="monthFilter" onchange="this.form.submit()" class="p-2 border rounded">
+                    <select name="monthFilter" onchange="this.form.submit()"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                         <option value="">Pilih Bulan</option>
                         <option value="01" {{ request('monthFilter') == '01' ? 'selected' : '' }}>Januari</option>
                         <option value="02" {{ request('monthFilter') == '02' ? 'selected' : '' }}>Februari</option>
@@ -90,7 +94,8 @@
                         <option value="12" {{ request('monthFilter') == '12' ? 'selected' : '' }}>Desember</option>
                     </select>
 
-                    <select name="dayFilter" onchange="this.form.submit()" class="p-2 border rounded">
+                    <select name="dayFilter" onchange="this.form.submit()"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                         <option value="">Pilih Hari</option>
                         @for ($i = 1; $i <= 31; $i++)
                             <option value="{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}"
@@ -99,14 +104,18 @@
                             </option>
                         @endfor
                     </select>
+
                 </form>
 
-                <a href="{{ route('petugas.order.create') }}"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
-                    font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700
-                    focus:outline-none dark:focus:ring-blue-800">
-                    Tambah Penjualan
-                </a>
+                <form action="{{ route('petugas.order.create') }}" method="get">
+                    <button type="submit"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
+                font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700
+                focus:outline-none dark:focus:ring-blue-800">
+                        Tambah Penjualan
+                    </button>
+                </form>
+
             </div>
 
             <table class="w-full text-sm text-center text-gray-500 dark:text-gray-400">
