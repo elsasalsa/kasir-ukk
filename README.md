@@ -56,7 +56,8 @@ A web-based sales system built using **PHP Laravel** and **Flowbite UI**. This s
     ```bash
     php artisan serve
 
-📜 License
+## 📜 License
+
 This project is open-source and available under the MIT License.
 
 ## 🙋‍♀️ About Me
