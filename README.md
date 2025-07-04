@@ -46,6 +46,7 @@ A web-based sales system built using **PHP Laravel** and **Flowbite UI**. This s
     ```bash
     cp .env.example .env
 4. **Configure Environment**
+
     Set up your database credentials in .env
 5. **Generate Key & Migrate Database**
     ```bash
