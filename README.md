@@ -54,8 +54,12 @@ A web-based sales system built using **PHP Laravel** and **Flowbite UI**. This s
 📜 License
 This project is open-source and available under the MIT License.
 
-🙋‍♀️ About Me
-Built with ❤️ by Elsa Salsa Bila
+## 🙋‍♀️ About Me
+
+Built with ❤️ by **Elsa Salsa Bila**
+
 🎓 SMK Wikrama Bogor - Software & Game Development
+
 🔗 [LinkedIn](https://www.linkedin.com/in/elsa-salsa)
+
 🌐 [Portfolio Website](https://elsaportfolios.netlify.app/)
