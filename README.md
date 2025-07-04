@@ -40,15 +40,19 @@ A web-based sales system built using **PHP Laravel** and **Flowbite UI**. This s
    git clone https://github.com/elsasalsa/kasir-ukk.git
    cd kasir-ukk
 2. **Install Dependencies**
+    ```bash
     composer install
 3. **Create .env File**
+    ```bash
     cp .env.example .env
 4. **Configure Environment**
     Set up your database credentials in .env
 5. **Generate Key & Migrate Database**
+    ```bash
     php artisan key:generate
     php artisan migrate --seed
 6. **Run the Server**
+    ```bash
     php artisan serve
 
 📜 License
